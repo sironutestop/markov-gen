@@ -1,0 +1,7 @@
+[project]
+name = "markov-yokokanovel"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["markovify", "mecab-python3"]

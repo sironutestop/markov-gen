@@ -1,7 +1,7 @@
 [project]
-name = "markov-yokokanovel"
+name = "markov-gen"
 version = "0.1.0"
-description = "Add your description here"
+description = "Generating text using Markov chains"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = ["markovify", "mecab-python3"]

@@ -1,1 +1,1 @@
-# marcov-yokokanovel
+# marcov-gen

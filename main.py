@@ -50,7 +50,7 @@ def main(filename: str, wakati_filename: str, markov_only: bool, count: int) -> 
         wakati_text_format(filename, wakati_filename)
     else:
         # マルコフ連鎖のためのファイル名変数を共通化する。
-        # only_markov モードの場合、wakati_filename は特に使わないため、特に問題にはならない想定。
+        # markov_only モードの場合、wakati_filename は特に使わないため、特に問題にはならない想定。
         wakati_filename = filename
 
     generate_markov_chain_text(wakati_filename, count)

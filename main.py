@@ -36,7 +36,7 @@ def generate_markov_chain_text(input_file: str, count: int) -> None:
             print(sentence)
 
 
-def main(filename: str, wakati_filename: str, only_markov: bool, count: int) -> None:
+def main(filename: str, wakati_filename: str, markov_only: bool, count: int) -> None:
     """テキストファイルから、マルコフ連鎖を用いて文章生成を行う関数
 
     Args:
@@ -46,7 +46,7 @@ def main(filename: str, wakati_filename: str, only_markov: bool, count: int) -> 
         count (int): 文章生成をする回数
     """
 
-    if not only_markov:
+    if not markov_only:
         wakati_text_format(filename, wakati_filename)
     else:
         # マルコフ連鎖のためのファイル名変数を共通化する。
@@ -79,4 +79,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    main(args.filename, args.wakati_filename, args.only_markov, args.count)
+    main(args.filename, args.wakati_filename, args.markov_only, args.count)

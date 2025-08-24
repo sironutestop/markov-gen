@@ -36,7 +36,7 @@ def generate_markov_chain_text(input_file: str, count: int) -> None:
             print(sentence)
 
 
-def main(filename: str, wakati_filename: str, only_markov: bool, count: int) -> None:
+def main(filename: str, wakati_filename: str, markov_only: bool, count: int) -> None:
     """テキストファイルから、マルコフ連鎖を用いて文章生成を行う関数
 
     Args:
@@ -46,7 +46,7 @@ def main(filename: str, wakati_filename: str, only_markov: bool, count: int) -> 
         count (int): 文章生成をする回数
     """
 
-    if not only_markov:
+    if not markov_only:
         wakati_text_format(filename, wakati_filename)
     else:
         # マルコフ連鎖のためのファイル名変数を共通化する。
@@ -62,16 +62,16 @@ if __name__ == "__main__":
         "-f",
         "--filename",
         required=True,
-        help="マルコフ連鎖の元になるテキストファイル名 (--only-markov オプションを指定する場合は、分かち書きされたファイル名を指定)",
+        help="マルコフ連鎖の元になるテキストファイル名 (--markov-only オプションを指定する場合は、分かち書きされたファイル名を指定)",
     )
     parser.add_argument(
         "-w",
         "--wakati-filename",
         default="wakati.txt",
-        help="処理過程で出力する、分かち書きのテキストファイル名 (--only-markov オプションを指定している場合は使用しない)",
+        help="処理過程で出力する、分かち書きのテキストファイル名 (--markov-only オプションを指定している場合は使用しない)",
     )
     parser.add_argument(
-        "-o", "--only-markov", action="store_true", help="マルコフ連鎖のみを行う (分かち書き処理を行わない)"
+        "-m", "--markov-only", action="store_true", help="マルコフ連鎖のみを行う (分かち書き処理を行わない)"
     )
     parser.add_argument(
         "-c", "--count", type=int, default=1, help="文章生成を行う回数を指定する (何も指定しなければ 1 回のみ)"
@@ -79,4 +79,4 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
-    main(args.filename, args.wakati_filename, args.only_markov, args.count)
+    main(args.filename, args.wakati_filename, args.markov_only, args.count)

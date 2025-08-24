@@ -1,8 +1,5 @@
-# デフォルトの分かち書きファイル名
-wakati.txt
-
-# ベースとなるテキストファイル名
-base.txt
+# テキストファイル系
+*.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

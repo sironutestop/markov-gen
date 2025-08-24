@@ -1,20 +1,22 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = ">=3.12"
 
 [[package]]
-name = "markov-yokokanovel"
+name = "markov-gen"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "markovify" },
     { name = "mecab-python3" },
+    { name = "unidic-lite" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "markovify" },
     { name = "mecab-python3" },
+    { name = "unidic-lite" },
 ]
 
 [[package]]
@@ -57,3 +59,9 @@ sdist = { url = "https://files.pythonhosted.org/packages/94/7d/a8a765761bbc0c836
 wheels = [
     { url = "https://files.pythonhosted.org/packages/8f/b7/559f59d57d18b44c6d1250d2eeaa676e028b9c527431f5d0736478a73ba1/Unidecode-1.4.0-py3-none-any.whl", hash = "sha256:c3c7606c27503ad8d501270406e345ddb480a7b5f38827eafe4fa82a137f0021", size = 235837, upload-time = "2025-04-24T08:45:01.609Z" },
 ]
+
+[[package]]
+name = "unidic-lite"
+version = "1.0.8"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/55/2b/8cf7514cb57d028abcef625afa847d60ff1ffbf0049c36b78faa7c35046f/unidic-lite-1.0.8.tar.gz", hash = "sha256:db9d4572d9fdd4d00a97949d4b0741ec480ee05a7e7e2e32f547500dae27b245", size = 47356746, upload-time = "2021-01-25T06:07:54.719Z" }
